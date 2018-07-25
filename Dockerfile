@@ -4,8 +4,7 @@ FROM arm32v6/alpine:edge
 MAINTAINER “Jonathan Ervine” <docker@ervine.org>
 
 # Install updates
-ENV container docker \
-    LANG='en_US.UTF-8' \
+ENV LANG='en_US.UTF-8' \
     LANGUAGE='en_US.UTF-8' \
     TERM='xterm' \
     VERSION='0.2.6' \
