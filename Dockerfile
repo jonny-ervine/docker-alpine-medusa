@@ -24,8 +24,9 @@ RUN wget https://github.com/pymedusa/Medusa/archive/v$VERSION.tar.gz -O medusa.t
   rm -rf medusa.tar.gz && \
   apk del make gcc g++ && \
   rm -rf /tmp/src && \
-  rm -rf /var/cache/apk/* \
-  adduser -u $MED_UID -g $MED_GID -M $MED_USER
+  rm -rf /var/cache/apk/* && \
+  adduser -u $MED_UID -G $MED_GID -H $MED_USER && \
+  chown -R $MED_USER:$MED_GROUP /medusa
 
 EXPOSE 8081
 
